@@ -285,6 +285,9 @@ func NewConfigQemuFromApi(vmr *VmRef, client *Client) (config *ConfigQemu, err e
 	if _, isSet := vmConfig["cipassword"]; isSet {
 		config.CIpassword = vmConfig["cipassword"].(string)
 	}
+	if _, isSet := vmConfig["nameserver"]; isSet {
+		config.Nameserver = vmConfig["nameserver"].(string)
+	}
 	if _, isSet := vmConfig["searchdomain"]; isSet {
 		config.Searchdomain = vmConfig["searchdomain"].(string)
 	}

@@ -168,7 +168,7 @@ func (config ConfigQemu) UpdateConfig(vmr *VmRef, client *Client) (err error) {
 		configParams["nameserver"] = config.Nameserver
 	}
 	if config.Sshkeys != "" {
-		sshkeyEnc := url.PathEscape(config.Sshkeys + "\n")
+		sshkeyEnc := url.PathEscape(config.Sshkeys)
 		sshkeyEnc = strings.Replace(sshkeyEnc, "+", "%2B", -1)
 		sshkeyEnc = strings.Replace(sshkeyEnc, "@", "%40", -1)
 		sshkeyEnc = strings.Replace(sshkeyEnc, "=", "%3D", -1)
